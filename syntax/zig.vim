@@ -36,6 +36,9 @@ syntax match zigType "\v<[iu]\d+>" display
 syntax match zigOperator display "\V\[-+/*=^&?|!><%~]"
 syntax match zigArrowCharacter display "\V->"
 
+" Special operators: .*, .?
+syntax match zigSpecial "\.\zs[*?]" display
+
 "                                     12_34  (. but not ..)? (12_34)?     (exponent  12_34)?
 syntax match zigDecNumber display   "\v<\d%(_?\d)*%(\.\.@!)?%(\d%(_?\d)*)?%([eE][+-]?\d%(_?\d)*)?"
 syntax match zigHexNumber display "\v<0x\x%(_?\x)*%(\.\.@!)?%(\x%(_?\x)*)?%([pP][+-]?\d%(_?\d)*)?"
