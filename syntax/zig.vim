@@ -60,6 +60,9 @@ syntax region zigString matchgroup=zigStringDelimiter start=+c\?"+ skip=+\\\\\|\
 syntax match zigEscapeError   display contained /\\./
 syntax match zigEscape        display contained /\\\([nrt\\'"]\|x\x\{2}\|u{\x\+}\)/
 
+" Identifiers using the @"" syntax.
+syntax match zigIdentifierSpecial +@".*"+ display
+
 highlight default link zigDecNumber zigNumber
 highlight default link zigHexNumber zigNumber
 highlight default link zigOctNumber zigNumber
