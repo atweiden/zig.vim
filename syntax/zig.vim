@@ -54,7 +54,7 @@ syntax region zigCommentLineDoc start="//[/!]/\@!" end="$" contains=zigTodo,@Spe
 syntax match zigMultilineStringPrefix /c\?\\\\/ contained containedin=zigMultilineString
 syntax region zigMultilineString matchgroup=zigMultilineStringDelimiter start="c\?\\\\" end="$" contains=zigMultilineStringPrefix display
 
-syntax keyword zigTodo contained TODO
+syntax keyword zigTodo contained FIXME TODO XXX
 
 syntax region zigString matchgroup=zigStringDelimiter start=+c\?"+ skip=+\\\\\|\\"+ end=+"+ oneline contains=zigEscape,zigEscapeError,@Spell
 syntax match zigEscapeError   display contained /\\./
