@@ -65,7 +65,7 @@ syntax match zigEscapeError   display contained /\\./
 syntax match zigEscape        display contained /\\\([nrt\\'"]\|x\x\{2}\|u{\x\+}\)/
 
 " Identifiers using the @"" syntax.
-syntax match zigIdentifierSpecial +@".*"+ display
+syntax region zigIdentifierSpecial matchgroup=zigIdentifierSpecialDelimiter start=+@"+ end=+"+ oneline
 
 highlight default link zigDecNumber zigNumber
 highlight default link zigHexNumber zigNumber
@@ -90,6 +90,7 @@ highlight default link zigCharacterInvalidUnicode zigCharacterInvalid
 highlight default link zigCharacter Character
 highlight default link zigEscape Special
 highlight default link zigEscapeError Error
+highlight default link zigIdentifierSpecialDelimiter Ignore
 highlight default link zigBoolean Boolean
 highlight default link zigNull Constant
 highlight default link zigConstant Constant
