@@ -62,6 +62,7 @@ function! zig#fmt#Format() abort
 
   if err != 0
     echohl Error | echomsg "zig fmt returned error" | echohl None
+    wincmd p
     return
   endif
 
