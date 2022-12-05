@@ -37,6 +37,14 @@ This plugin enables automatic code formatting on save by default using
 let g:zig_fmt_autosave = 0
 ```
 
+If `zig fmt` encounters a code formatting error, this plugin populates
+the location list with relevant errors. To disable automatically switching
+to the location list, use this configuration in vimrc:
+
+```
+let g:zig_fmt_autoswitch = 0
+```
+
 The default compiler which gets used by `:make` (`:help :compiler` for details)
 is `zig_build` when `build.zig` can be found upward in the directory structure
 and is `zig_build_exe` otherwise.  In total, the compiler options are:
