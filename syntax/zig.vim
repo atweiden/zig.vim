@@ -40,7 +40,7 @@ syntax match zigArrowCharacter display "\V->"
 syntax match zigSpecial "\.\zs[*?]" display
 
 "                                     12_34  (. but not ..)? (12_34)?     (exponent  12_34)?
-syntax match zigDecNumber display   "\v<\d%(_?\d)*%(\.\.@!)?%(\d%(_?\d)*)?%([eE][+-]?\d%(_?\d)*)?"
+syntax match zigDecNumber display "\v<\d%(_?\d)*%(\.\.@!)?%(\d%(_?\d)*)?%([eE][+-]?\d%(_?\d)*)?"
 syntax match zigHexNumber display "\v<0x\x%(_?\x)*%(\.\.@!)?%(\x%(_?\x)*)?%([pP][+-]?\d%(_?\d)*)?"
 syntax match zigOctNumber display "\v<0o\o%(_?\o)*"
 syntax match zigBinNumber display "\v<0b[01]%(_?[01])*"
