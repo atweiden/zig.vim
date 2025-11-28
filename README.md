@@ -21,12 +21,12 @@ File detection and syntax highlighting for the
  * Use Vim 8 or newer
  * `mkdir -p ~/.vim/pack/plugins/start/`
  * `cd ~/.vim/pack/plugins/start/`
- * `git clone https://github.com/ziglang/zig.vim`
+ * `git clone https://codeberg.org/ziglang/zig.vim`
 
 ### If using **Neovim**:
  * `mkdir -p ~/.local/share/nvim/site/pack/plugins/start/`
  * `cd ~/.local/share/nvim/site/pack/plugins/start/`
- * `git clone https://github.com/ziglang/zig.vim`
+ * `git clone https://codeberg.org/ziglang/zig.vim`
 
 ## Configuration
 

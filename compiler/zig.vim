@@ -1,6 +1,6 @@
 " Vim compiler file
 " Compiler: Zig Compiler
-" For bugs, patches and license go to https://github.com/ziglang/zig.vim
+" For bugs, patches and license go to https://codeberg.org/ziglang/zig.vim
 
 if exists("current_compiler")
     finish
