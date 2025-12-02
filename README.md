@@ -6,11 +6,11 @@ File detection and syntax highlighting for the
 ## Installation
 
 ### If using [**vim-plug**](https://github.com/junegunn/vim-plug) (for Vim or Neovim)
- * Open vim config
- * Write `Plug 'ziglang/zig.vim'` inside the `plug` command:
+
+  * Open your vim config and add the following:
   ```vim
   call plug#begin('~/.vim/plugged')
-     Plug 'ziglang/zig.vim'
+     Plug 'https://codeberg.org/ziglang/zig.vim'
   call plug#end()
   ```
    
