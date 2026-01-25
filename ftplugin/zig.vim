@@ -8,7 +8,11 @@ let b:did_ftplugin = 1
 let s:cpo_orig = &cpo
 set cpo&vim
 
-compiler zig_build
+if findfile('build.zig', expand('%:p:h') . ';') ==# ''
+    compiler zig_build_exe
+else
+    compiler zig_build
+endif
 
 " Match Zig builtin fns
 setlocal iskeyword+=@-@
