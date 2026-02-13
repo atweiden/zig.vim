@@ -47,32 +47,5 @@ function! GetZigIndent(lnum)
     let prevLineNum = prevnonblank(a:lnum-1)
     let prevLine = getline(prevLineNum)
 
-    " for lines that look like
-    "   },
-    "   };
-    " try treating them the same as a }
-    if prevLine =~ '\v^\s*},$'
-        if currentLine =~ '\v^\s*};$' || currentLine =~ '\v^\s*}$'
-            return indent(prevLineNum) - 4
-        endif
-        return indent(prevLineNum-1) - 4
-    endif
-    if currentLine =~ '\v^\s*},$'
-        return indent(prevLineNum) - 4
-    endif
-    if currentLine =~ '\v^\s*};$'
-        return indent(prevLineNum) - 4
-    endif
-
-
-    " cindent doesn't handle this case correctly:
-    " switch (1): {
-    "   1 => true,
-    "       ~
-    "       ^---- indents to here
-    if prevLine =~ '.*=>.*,$' && currentLine !~ '.*}$'
-       return indent(prevLineNum)
-    endif
-
     return cindent(a:lnum)
 endfunction
