@@ -47,5 +47,17 @@ function! GetZigIndent(lnum)
     let prevLineNum = prevnonblank(a:lnum-1)
     let prevLine = getline(prevLineNum)
 
+    " cindent misinterprets labeled blocks:
+    " 
+    " ```zig
+    " blk: {
+    "     ...
+    " }
+    " // indent here
+    " ```
+    if prevLine =~ '\v^\s*}$' && currentLine !~ '\v^\s*}[:;]?$'
+        return indent(prevLineNum)
+    endif
+
     return cindent(a:lnum)
 endfunction
