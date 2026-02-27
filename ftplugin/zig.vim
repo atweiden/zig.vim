@@ -33,25 +33,6 @@ if has('comments')
     setlocal commentstring=//\ %s
 endif
 
-if has('find_in_path')
-    let &l:includeexpr='substitute(v:fname, "^([^.])$", "\1.zig", "")'
-    let &l:include='\v(\@import>|\@cInclude>|^\s*\#\s*include)'
-endif
-
-let &l:define='\v(<fn>|<const>|<var>|^\s*\#\s*define)'
-
-if !exists('g:zig_std_dir') && exists('*zon_decode') && executable('zig')
-    silent let s:env = system('zig env')
-    if v:shell_error == 0
-        let g:zig_std_dir = zon_decode(s:env)['std_dir']
-    endif
-    unlet! s:env
-endif
-
-if exists('g:zig_std_dir')
-    let &l:path = g:zig_std_dir . ',' . &l:path
-endif
-
 let b:undo_ftplugin =
     \ 'setl isk< et< ts< sts< sw< fo< sua< mp< com< cms< inex< inc< pa<'
 
